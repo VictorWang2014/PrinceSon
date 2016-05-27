@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    UILabel *la = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 110, 110)];
+    la.text = @"label";
+    [self.view addSubview:la];
 }
 
 - (void)didReceiveMemoryWarning {
