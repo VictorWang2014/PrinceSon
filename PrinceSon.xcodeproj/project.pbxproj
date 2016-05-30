@@ -13,7 +13,6 @@
 		9658DDE31CF8199E007CB1CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9658DDE11CF8199E007CB1CF /* Main.storyboard */; };
 		9658DDE51CF8199E007CB1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9658DDE41CF8199E007CB1CF /* Assets.xcassets */; };
 		9658DDE81CF8199E007CB1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9658DDE61CF8199E007CB1CF /* LaunchScreen.storyboard */; };
-		9658DDF51CF83CF5007CB1CF /* CMAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DDF41CF83CF5007CB1CF /* CMAsyncSocket.m */; };
 		9658DE091CF844BB007CB1CF /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 9658DE081CF844BB007CB1CF /* Source */; };
 		9658DE181CF8471A007CB1CF /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE171CF8471A007CB1CF /* AsyncSocket.m */; };
 		9658DE281CF8483D007CB1CF /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE1C1CF8483D007CB1CF /* AFHTTPSessionManager.m */; };
@@ -24,6 +23,10 @@
 		9658DE2D1CF8483D007CB1CF /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE271CF8483D007CB1CF /* AFURLSessionManager.m */; };
 		9658DE311CF84BFA007CB1CF /* VCSocketManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE301CF84BFA007CB1CF /* VCSocketManagerModule.m */; };
 		9658DE341CF84CC5007CB1CF /* DispatchManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE331CF84CC5007CB1CF /* DispatchManagerModule.m */; };
+		9658DE3E1CFBE300007CB1CF /* ServiceParserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE3D1CFBE300007CB1CF /* ServiceParserModule.m */; };
+		9658DE421CFBE3B2007CB1CF /* ServiceDataItemModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE411CFBE3B2007CB1CF /* ServiceDataItemModule.m */; };
+		9658DE461CFBE928007CB1CF /* ServiceDataInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE451CFBE928007CB1CF /* ServiceDataInterface.m */; };
+		9658DE491CFC0CA3007CB1CF /* ServiceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE481CFC0CA3007CB1CF /* ServiceUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +40,6 @@
 		9658DDE41CF8199E007CB1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9658DDE71CF8199E007CB1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9658DDE91CF8199E007CB1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9658DDF31CF83CF5007CB1CF /* CMAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMAsyncSocket.h; path = Servicelayer/socket/CMAsyncSocket.h; sourceTree = "<group>"; };
-		9658DDF41CF83CF5007CB1CF /* CMAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMAsyncSocket.m; path = Servicelayer/socket/CMAsyncSocket.m; sourceTree = "<group>"; };
 		9658DE081CF844BB007CB1CF /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = /Users/wangmingquan/Desktop/PrinceSon/PrinceSon/Servicelayer/Source; sourceTree = "<absolute>"; };
 		9658DE161CF8471A007CB1CF /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = Servicelayer/Socket/AsyncSocket.h; sourceTree = "<group>"; };
 		9658DE171CF8471A007CB1CF /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = Servicelayer/Socket/AsyncSocket.m; sourceTree = "<group>"; };
@@ -59,6 +60,14 @@
 		9658DE301CF84BFA007CB1CF /* VCSocketManagerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCSocketManagerModule.m; path = Servicelayer/SocketModule/VCSocketManagerModule.m; sourceTree = "<group>"; };
 		9658DE321CF84CC5007CB1CF /* DispatchManagerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DispatchManagerModule.h; path = Servicelayer/DispatchManagerModule/DispatchManagerModule.h; sourceTree = "<group>"; };
 		9658DE331CF84CC5007CB1CF /* DispatchManagerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DispatchManagerModule.m; path = Servicelayer/DispatchManagerModule/DispatchManagerModule.m; sourceTree = "<group>"; };
+		9658DE3C1CFBE300007CB1CF /* ServiceParserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceParserModule.h; path = Servicelayer/ParseModule/ServiceParserModule.h; sourceTree = "<group>"; };
+		9658DE3D1CFBE300007CB1CF /* ServiceParserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceParserModule.m; path = Servicelayer/ParseModule/ServiceParserModule.m; sourceTree = "<group>"; };
+		9658DE401CFBE3B2007CB1CF /* ServiceDataItemModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceDataItemModule.h; path = Servicelayer/DataItem/ServiceDataItemModule.h; sourceTree = "<group>"; };
+		9658DE411CFBE3B2007CB1CF /* ServiceDataItemModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceDataItemModule.m; path = Servicelayer/DataItem/ServiceDataItemModule.m; sourceTree = "<group>"; };
+		9658DE441CFBE928007CB1CF /* ServiceDataInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceDataInterface.h; path = Servicelayer/ServiceDataInterface/ServiceDataInterface.h; sourceTree = "<group>"; };
+		9658DE451CFBE928007CB1CF /* ServiceDataInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceDataInterface.m; path = Servicelayer/ServiceDataInterface/ServiceDataInterface.m; sourceTree = "<group>"; };
+		9658DE471CFC0CA3007CB1CF /* ServiceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceUtil.h; path = Servicelayer/ServiceUtil.h; sourceTree = "<group>"; };
+		9658DE481CFC0CA3007CB1CF /* ServiceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceUtil.m; path = Servicelayer/ServiceUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +128,14 @@
 		9658DDEF1CF83C1D007CB1CF /* Servicelayer */ = {
 			isa = PBXGroup;
 			children = (
+				9658DE431CFBE7BC007CB1CF /* ServiceDataInterface */,
+				9658DE3F1CFBE36D007CB1CF /* DataItem */,
+				9658DE381CFBE1F0007CB1CF /* ParseModule */,
 				9658DE2E1CF84B7F007CB1CF /* DispatchManagerModule */,
 				9658DDF61CF83DAF007CB1CF /* SocketModule */,
 				9658DDF21CF83CAB007CB1CF /* Socket */,
+				9658DE471CFC0CA3007CB1CF /* ServiceUtil.h */,
+				9658DE481CFC0CA3007CB1CF /* ServiceUtil.m */,
 			);
 			name = Servicelayer;
 			sourceTree = "<group>";
@@ -145,8 +159,6 @@
 			children = (
 				9658DE161CF8471A007CB1CF /* AsyncSocket.h */,
 				9658DE171CF8471A007CB1CF /* AsyncSocket.m */,
-				9658DDF31CF83CF5007CB1CF /* CMAsyncSocket.h */,
-				9658DDF41CF83CF5007CB1CF /* CMAsyncSocket.m */,
 			);
 			name = Socket;
 			sourceTree = "<group>";
@@ -195,6 +207,33 @@
 				9658DE331CF84CC5007CB1CF /* DispatchManagerModule.m */,
 			);
 			name = DispatchManagerModule;
+			sourceTree = "<group>";
+		};
+		9658DE381CFBE1F0007CB1CF /* ParseModule */ = {
+			isa = PBXGroup;
+			children = (
+				9658DE3C1CFBE300007CB1CF /* ServiceParserModule.h */,
+				9658DE3D1CFBE300007CB1CF /* ServiceParserModule.m */,
+			);
+			name = ParseModule;
+			sourceTree = "<group>";
+		};
+		9658DE3F1CFBE36D007CB1CF /* DataItem */ = {
+			isa = PBXGroup;
+			children = (
+				9658DE401CFBE3B2007CB1CF /* ServiceDataItemModule.h */,
+				9658DE411CFBE3B2007CB1CF /* ServiceDataItemModule.m */,
+			);
+			name = DataItem;
+			sourceTree = "<group>";
+		};
+		9658DE431CFBE7BC007CB1CF /* ServiceDataInterface */ = {
+			isa = PBXGroup;
+			children = (
+				9658DE441CFBE928007CB1CF /* ServiceDataInterface.h */,
+				9658DE451CFBE928007CB1CF /* ServiceDataInterface.m */,
+			);
+			name = ServiceDataInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,16 +310,19 @@
 				9658DE341CF84CC5007CB1CF /* DispatchManagerModule.m in Sources */,
 				9658DDE01CF8199D007CB1CF /* ViewController.m in Sources */,
 				9658DE2A1CF8483D007CB1CF /* AFSecurityPolicy.m in Sources */,
-				9658DDF51CF83CF5007CB1CF /* CMAsyncSocket.m in Sources */,
+				9658DE3E1CFBE300007CB1CF /* ServiceParserModule.m in Sources */,
 				9658DDDD1CF8199D007CB1CF /* AppDelegate.m in Sources */,
 				9658DE2C1CF8483D007CB1CF /* AFURLResponseSerialization.m in Sources */,
 				9658DE311CF84BFA007CB1CF /* VCSocketManagerModule.m in Sources */,
+				9658DE491CFC0CA3007CB1CF /* ServiceUtil.m in Sources */,
 				9658DE181CF8471A007CB1CF /* AsyncSocket.m in Sources */,
+				9658DE421CFBE3B2007CB1CF /* ServiceDataItemModule.m in Sources */,
 				9658DDDA1CF8199D007CB1CF /* main.m in Sources */,
 				9658DE281CF8483D007CB1CF /* AFHTTPSessionManager.m in Sources */,
 				9658DE2B1CF8483D007CB1CF /* AFURLRequestSerialization.m in Sources */,
 				9658DE2D1CF8483D007CB1CF /* AFURLSessionManager.m in Sources */,
 				9658DE291CF8483D007CB1CF /* AFNetworkReachabilityManager.m in Sources */,
+				9658DE461CFBE928007CB1CF /* ServiceDataInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +477,7 @@
 				9658DDEE1CF8199E007CB1CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
