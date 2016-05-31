@@ -10,4 +10,9 @@
 
 @interface ServiceUtil : NSObject
 
++ (void)writeInData:(NSMutableData *)data str:(NSString *)str;
++ (void)writeInData:(NSMutableData *)data byte:(char)byte;
++ (void)writeInData:(NSMutableData *)data sh:(short)sh;
++ (void)writeInData:(NSMutableData *)data intN:(short)intN;
+
 @end

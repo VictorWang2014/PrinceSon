@@ -10,10 +10,6 @@
 
 @interface ServiceDataInterface : NSObject
 
-@end
-
-@interface Service1000DataInterface : NSObject
-
-- ()
++ (NSData *)service1000RequestDataInterfaceWithVersion:(NSString *)version channelID:(NSString *)channelID deviceType:(NSString *)deviceType;
 
 @end

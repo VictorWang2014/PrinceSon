@@ -7,10 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "TestViewController.h"
+#import "DispatchManagerModule.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *_tableView;
+    DispatchManagerModule *_dispatchModule;
 }
 
 @property (nonatomic, strong) NSMutableArray *list;
@@ -22,7 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.list = [@[@"request marketserver IP", @"", @""] copy];
+    self.list = [@[@"request marketserver IP", @"test"] copy];
+    _dispatchModule = [[DispatchManagerModule alloc] init];
+    
     // Do any additional setup after loading the view.
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     _tableView.delegate = self;
@@ -59,7 +64,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        
+        [_dispatchModule requestMarketServerIPWithSuccess:^{
+            NSLog(@"success");
+        } failure:^{
+            NSLog(@"failure");
+        }];
+    } else if (indexPath.row == self.list.count-1) {
+        TestViewController *vc = [[TestViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 

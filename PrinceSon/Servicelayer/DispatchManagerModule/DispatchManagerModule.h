@@ -12,4 +12,6 @@ typedef void(^DispatchManagerBlock) (void);
 
 @interface DispatchManagerModule : NSObject
 
+- (void)requestMarketServerIPWithSuccess:(DispatchManagerBlock)success failure:(DispatchManagerBlock)failure;
+
 @end

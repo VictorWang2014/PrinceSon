@@ -27,6 +27,9 @@
 		9658DE421CFBE3B2007CB1CF /* ServiceDataItemModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE411CFBE3B2007CB1CF /* ServiceDataItemModule.m */; };
 		9658DE461CFBE928007CB1CF /* ServiceDataInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE451CFBE928007CB1CF /* ServiceDataInterface.m */; };
 		9658DE491CFC0CA3007CB1CF /* ServiceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE481CFC0CA3007CB1CF /* ServiceUtil.m */; };
+		9658DE4C1CFD646A007CB1CF /* ServiceContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE4B1CFD646A007CB1CF /* ServiceContext.m */; };
+		9658DE501CFD7391007CB1CF /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE4F1CFD7391007CB1CF /* SSKeychain.m */; };
+		9658DE531CFD73CF007CB1CF /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE521CFD73CF007CB1CF /* TestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,12 @@
 		9658DE451CFBE928007CB1CF /* ServiceDataInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceDataInterface.m; path = Servicelayer/ServiceDataInterface/ServiceDataInterface.m; sourceTree = "<group>"; };
 		9658DE471CFC0CA3007CB1CF /* ServiceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceUtil.h; path = Servicelayer/ServiceUtil.h; sourceTree = "<group>"; };
 		9658DE481CFC0CA3007CB1CF /* ServiceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceUtil.m; path = Servicelayer/ServiceUtil.m; sourceTree = "<group>"; };
+		9658DE4A1CFD646A007CB1CF /* ServiceContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceContext.h; path = Servicelayer/ServiceContext.h; sourceTree = "<group>"; };
+		9658DE4B1CFD646A007CB1CF /* ServiceContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceContext.m; path = Servicelayer/ServiceContext.m; sourceTree = "<group>"; };
+		9658DE4E1CFD7391007CB1CF /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSKeychain.h; path = ThirtyParty/SSKeyChain/SSKeychain.h; sourceTree = "<group>"; };
+		9658DE4F1CFD7391007CB1CF /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = ThirtyParty/SSKeyChain/SSKeychain.m; sourceTree = "<group>"; };
+		9658DE511CFD73CF007CB1CF /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		9658DE521CFD73CF007CB1CF /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +113,8 @@
 				9658DDDC1CF8199D007CB1CF /* AppDelegate.m */,
 				9658DDDE1CF8199D007CB1CF /* ViewController.h */,
 				9658DDDF1CF8199D007CB1CF /* ViewController.m */,
+				9658DE511CFD73CF007CB1CF /* TestViewController.h */,
+				9658DE521CFD73CF007CB1CF /* TestViewController.m */,
 				9658DE191CF8481A007CB1CF /* ThirtyParty */,
 				9658DDF11CF83C3A007CB1CF /* Utillayer */,
 				9658DDF01CF83C2B007CB1CF /* Applicationlayer */,
@@ -136,6 +147,8 @@
 				9658DDF21CF83CAB007CB1CF /* Socket */,
 				9658DE471CFC0CA3007CB1CF /* ServiceUtil.h */,
 				9658DE481CFC0CA3007CB1CF /* ServiceUtil.m */,
+				9658DE4A1CFD646A007CB1CF /* ServiceContext.h */,
+				9658DE4B1CFD646A007CB1CF /* ServiceContext.m */,
 			);
 			name = Servicelayer;
 			sourceTree = "<group>";
@@ -175,6 +188,7 @@
 		9658DE191CF8481A007CB1CF /* ThirtyParty */ = {
 			isa = PBXGroup;
 			children = (
+				9658DE4D1CFD7358007CB1CF /* SSKeyChain */,
 				9658DE1A1CF8482A007CB1CF /* AFNetWorking */,
 			);
 			name = ThirtyParty;
@@ -234,6 +248,15 @@
 				9658DE451CFBE928007CB1CF /* ServiceDataInterface.m */,
 			);
 			name = ServiceDataInterface;
+			sourceTree = "<group>";
+		};
+		9658DE4D1CFD7358007CB1CF /* SSKeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				9658DE4E1CFD7391007CB1CF /* SSKeychain.h */,
+				9658DE4F1CFD7391007CB1CF /* SSKeychain.m */,
+			);
+			name = SSKeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,15 +330,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9658DE4C1CFD646A007CB1CF /* ServiceContext.m in Sources */,
 				9658DE341CF84CC5007CB1CF /* DispatchManagerModule.m in Sources */,
 				9658DDE01CF8199D007CB1CF /* ViewController.m in Sources */,
 				9658DE2A1CF8483D007CB1CF /* AFSecurityPolicy.m in Sources */,
 				9658DE3E1CFBE300007CB1CF /* ServiceParserModule.m in Sources */,
+				9658DE501CFD7391007CB1CF /* SSKeychain.m in Sources */,
 				9658DDDD1CF8199D007CB1CF /* AppDelegate.m in Sources */,
 				9658DE2C1CF8483D007CB1CF /* AFURLResponseSerialization.m in Sources */,
 				9658DE311CF84BFA007CB1CF /* VCSocketManagerModule.m in Sources */,
 				9658DE491CFC0CA3007CB1CF /* ServiceUtil.m in Sources */,
 				9658DE181CF8471A007CB1CF /* AsyncSocket.m in Sources */,
+				9658DE531CFD73CF007CB1CF /* TestViewController.m in Sources */,
 				9658DE421CFBE3B2007CB1CF /* ServiceDataItemModule.m in Sources */,
 				9658DDDA1CF8199D007CB1CF /* main.m in Sources */,
 				9658DE281CF8483D007CB1CF /* AFHTTPSessionManager.m in Sources */,
