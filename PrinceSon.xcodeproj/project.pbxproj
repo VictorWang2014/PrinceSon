@@ -15,7 +15,7 @@
 		9658DDE31CF8199E007CB1CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9658DDE11CF8199E007CB1CF /* Main.storyboard */; };
 		9658DDE51CF8199E007CB1CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9658DDE41CF8199E007CB1CF /* Assets.xcassets */; };
 		9658DDE81CF8199E007CB1CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9658DDE61CF8199E007CB1CF /* LaunchScreen.storyboard */; };
-		9658DE091CF844BB007CB1CF /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 9658DE081CF844BB007CB1CF /* Source */; };
+		9658DE091CF844BB007CB1CF /* (null) in Resources */ = {isa = PBXBuildFile; };
 		9658DE181CF8471A007CB1CF /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE171CF8471A007CB1CF /* AsyncSocket.m */; };
 		9658DE281CF8483D007CB1CF /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE1C1CF8483D007CB1CF /* AFHTTPSessionManager.m */; };
 		9658DE291CF8483D007CB1CF /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE1F1CF8483D007CB1CF /* AFNetworkReachabilityManager.m */; };
@@ -49,7 +49,6 @@
 		9658DDE41CF8199E007CB1CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9658DDE71CF8199E007CB1CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9658DDE91CF8199E007CB1CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9658DE081CF844BB007CB1CF /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = /Users/wangmingquan/Desktop/PrinceSon/PrinceSon/Servicelayer/Source; sourceTree = "<absolute>"; };
 		9658DE161CF8471A007CB1CF /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AsyncSocket.h; path = Servicelayer/Socket/AsyncSocket.h; sourceTree = "<group>"; };
 		9658DE171CF8471A007CB1CF /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AsyncSocket.m; path = Servicelayer/Socket/AsyncSocket.m; sourceTree = "<group>"; };
 		9658DE1B1CF8483D007CB1CF /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = ThirtyParty/AFNetWorking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -140,13 +139,13 @@
 		9658DDD71CF8199D007CB1CF /* PrinceSon */ = {
 			isa = PBXGroup;
 			children = (
-				960A609F1CFEE53100878204 /* Source */,
 				9658DDDB1CF8199D007CB1CF /* AppDelegate.h */,
 				9658DDDC1CF8199D007CB1CF /* AppDelegate.m */,
 				9658DDDE1CF8199D007CB1CF /* ViewController.h */,
 				9658DDDF1CF8199D007CB1CF /* ViewController.m */,
 				9658DE511CFD73CF007CB1CF /* TestViewController.h */,
 				9658DE521CFD73CF007CB1CF /* TestViewController.m */,
+				960A609F1CFEE53100878204 /* Source */,
 				9658DE191CF8481A007CB1CF /* ThirtyParty */,
 				9658DDF11CF83C3A007CB1CF /* Utillayer */,
 				9658DDF01CF83C2B007CB1CF /* Applicationlayer */,
@@ -354,7 +353,7 @@
 				9658DDE81CF8199E007CB1CF /* LaunchScreen.storyboard in Resources */,
 				9658DDE51CF8199E007CB1CF /* Assets.xcassets in Resources */,
 				9658DDE31CF8199E007CB1CF /* Main.storyboard in Resources */,
-				9658DE091CF844BB007CB1CF /* Source in Resources */,
+				9658DE091CF844BB007CB1CF /* (null) in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

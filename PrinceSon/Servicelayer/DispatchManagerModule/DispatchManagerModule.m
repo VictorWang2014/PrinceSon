@@ -74,7 +74,23 @@
 #pragma mark - private
 - (void)_getDispatchAddress
 {
-    
+    // 获取资源文件中的调度地址
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ServerConfig" ofType:@"plist"];
+    NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:filePath];
+    NSArray *array = [dic objectForKey:@"NavServers"];
+    if ([array isKindOfClass:[NSArray class]]) {
+        self.dispatchAddressArray = [NSMutableArray array];
+        for (int i = 0; i < array.count; i++) {
+            NSDictionary *tmpD = [array objectAtIndex:i];
+            NSString *host = [tmpD objectForKey:@"host"];
+            NSString *port = [tmpD objectForKey:@"port"];
+            NSString *url = [NSString stringWithFormat:@"%@:%@", host, port];
+            [self.dispatchAddressArray addObject:url];
+        }
+    }
+    for (int i = 0; i < self.dispatchAddressArray.count; i++) {
+        VCLogDispatchLayer(@"%@", [self.dispatchAddressArray objectAtIndex:i]);
+    }
 }
 
 @end
