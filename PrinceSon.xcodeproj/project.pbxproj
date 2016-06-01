@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		960A609C1CFED18100878204 /* VCLogManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A609B1CFED18100878204 /* VCLogManagement.m */; };
+		960A60A21CFEE55600878204 /* ServerConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 960A60A11CFEE55600878204 /* ServerConfig.plist */; };
 		9658DDDA1CF8199D007CB1CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DDD91CF8199D007CB1CF /* main.m */; };
 		9658DDDD1CF8199D007CB1CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DDDC1CF8199D007CB1CF /* AppDelegate.m */; };
 		9658DDE01CF8199D007CB1CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DDDF1CF8199D007CB1CF /* ViewController.m */; };
@@ -33,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		960A609A1CFED18100878204 /* VCLogManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VCLogManagement.h; path = ThirtyParty/LogManager/VCLogManagement.h; sourceTree = "<group>"; };
+		960A609B1CFED18100878204 /* VCLogManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCLogManagement.m; path = ThirtyParty/LogManager/VCLogManagement.m; sourceTree = "<group>"; };
+		960A609E1CFED2CC00878204 /* PrinceSon.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinceSon.pch; sourceTree = "<group>"; };
+		960A60A11CFEE55600878204 /* ServerConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ServerConfig.plist; path = Source/Configure/ServerConfig.plist; sourceTree = "<group>"; };
 		9658DDD51CF8199C007CB1CF /* PrinceSon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinceSon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9658DDD91CF8199D007CB1CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9658DDDB1CF8199D007CB1CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +96,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		960A60991CFED16200878204 /* LogManager */ = {
+			isa = PBXGroup;
+			children = (
+				960A609A1CFED18100878204 /* VCLogManagement.h */,
+				960A609B1CFED18100878204 /* VCLogManagement.m */,
+			);
+			name = LogManager;
+			sourceTree = "<group>";
+		};
+		960A609F1CFEE53100878204 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				960A60A01CFEE53A00878204 /* Configure */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		960A60A01CFEE53A00878204 /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				960A60A11CFEE55600878204 /* ServerConfig.plist */,
+			);
+			name = Configure;
+			sourceTree = "<group>";
+		};
 		9658DDCC1CF8199C007CB1CF = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +140,7 @@
 		9658DDD71CF8199D007CB1CF /* PrinceSon */ = {
 			isa = PBXGroup;
 			children = (
+				960A609F1CFEE53100878204 /* Source */,
 				9658DDDB1CF8199D007CB1CF /* AppDelegate.h */,
 				9658DDDC1CF8199D007CB1CF /* AppDelegate.m */,
 				9658DDDE1CF8199D007CB1CF /* ViewController.h */,
@@ -122,6 +154,7 @@
 				9658DDE11CF8199E007CB1CF /* Main.storyboard */,
 				9658DDE41CF8199E007CB1CF /* Assets.xcassets */,
 				9658DDE61CF8199E007CB1CF /* LaunchScreen.storyboard */,
+				960A609E1CFED2CC00878204 /* PrinceSon.pch */,
 				9658DDE91CF8199E007CB1CF /* Info.plist */,
 				9658DDD81CF8199D007CB1CF /* Supporting Files */,
 			);
@@ -188,6 +221,7 @@
 		9658DE191CF8481A007CB1CF /* ThirtyParty */ = {
 			isa = PBXGroup;
 			children = (
+				960A60991CFED16200878204 /* LogManager */,
 				9658DE4D1CFD7358007CB1CF /* SSKeyChain */,
 				9658DE1A1CF8482A007CB1CF /* AFNetWorking */,
 			);
@@ -316,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960A60A21CFEE55600878204 /* ServerConfig.plist in Resources */,
 				9658DDE81CF8199E007CB1CF /* LaunchScreen.storyboard in Resources */,
 				9658DDE51CF8199E007CB1CF /* Assets.xcassets in Resources */,
 				9658DDE31CF8199E007CB1CF /* Main.storyboard in Resources */,
@@ -330,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960A609C1CFED18100878204 /* VCLogManagement.m in Sources */,
 				9658DE4C1CFD646A007CB1CF /* ServiceContext.m in Sources */,
 				9658DE341CF84CC5007CB1CF /* DispatchManagerModule.m in Sources */,
 				9658DDE01CF8199D007CB1CF /* ViewController.m in Sources */,
@@ -462,6 +498,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: lancer li (8DTN29Q5Q6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: lancer li (8DTN29Q5Q6)";
+				GCC_PREFIX_HEADER = PrinceSon/PrinceSon.pch;
 				INFOPLIST_FILE = PrinceSon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -475,6 +512,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = PrinceSon/PrinceSon.pch;
 				INFOPLIST_FILE = PrinceSon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

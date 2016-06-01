@@ -15,4 +15,9 @@
 + (void)writeInData:(NSMutableData *)data sh:(short)sh;
 + (void)writeInData:(NSMutableData *)data intN:(short)intN;
 
++ (NSString *)readStringFromData:(NSData *)data pos:(int *)pos;
++ (char)readByteFromData:(NSData *)data pos:(int *)pos;
++ (short)readShortFromData:(NSData *)data pos:(int *)pos;
++ (int)readIntFromData:(NSData *)data pos:(int *)pos;
+
 @end

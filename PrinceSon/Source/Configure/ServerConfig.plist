@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NavServers</key>
+	<array>
+		<dict>
+			<key>host</key>
+			<string>222.73.34.8</string>
+			<key>port</key>
+			<real>12346</real>
+		</dict>
+		<dict>
+			<key>host</key>
+			<string>222.73.103.42</string>
+			<key>port</key>
+			<real>12346</real>
+		</dict>
+		<dict>
+			<key>host</key>
+			<string>61.151.252.4</string>
+			<key>port</key>
+			<real>12346</real>
+		</dict>
+		<dict>
+			<key>host</key>
+			<string>61.151.252.14</string>
+			<key>port</key>
+			<real>12346</real>
+		</dict>
+	</array>
+	<key>ChannelNo</key>
+	<string>213</string>
+	<key>TerminalId</key>
+	<string>iphone</string>
+	<key>PlatformId</key>
+	<string>14</string>
+</dict>
+</plist>

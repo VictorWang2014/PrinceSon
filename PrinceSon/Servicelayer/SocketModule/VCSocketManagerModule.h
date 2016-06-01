@@ -10,7 +10,7 @@
 
 @interface VCSocketManagerModule : NSObject
 
-+ (VCSocketManagerModule *)shareSocketManager;
+//+ (VCSocketManagerModule *)shareSocketManager;
 
 
 

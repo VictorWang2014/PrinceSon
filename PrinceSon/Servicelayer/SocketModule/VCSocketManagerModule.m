@@ -10,20 +10,21 @@
 
 @interface VCSocketManagerModule ()
 
+
 @end
 
 @implementation VCSocketManagerModule
 
-#pragma mark - singleton
-+ (VCSocketManagerModule *)shareSocketManager
-{
-    static VCSocketManagerModule *share = nil;
-    static dispatch_once_t predicate;
-    dispatch_once(&predicate, ^{
-        share = [[VCSocketManagerModule alloc] init];
-    });
-    return share;
-}
+//#pragma mark - singleton
+//+ (VCSocketManagerModule *)shareSocketManager
+//{
+//    static VCSocketManagerModule *share = nil;
+//    static dispatch_once_t predicate;
+//    dispatch_once(&predicate, ^{
+//        share = [[VCSocketManagerModule alloc] init];
+//    });
+//    return share;
+//}
 
 #pragma mark - lifecycle
 - (instancetype)init

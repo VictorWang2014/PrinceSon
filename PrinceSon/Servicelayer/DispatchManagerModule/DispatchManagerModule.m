@@ -23,6 +23,8 @@
 @property (nonatomic, strong) NSString *sfUserTag;//收费用户标记
 @property (nonatomic, strong) NSString *yysTag;//运营商标记
 
+@property (nonatomic, strong) NSMutableArray *dispatchAddressArray;//保存的调度地址 得更新
+
 @end
 
 @implementation DispatchManagerModule
@@ -38,6 +40,8 @@
         self.zdType = @"iphone";
         self.zdNum = ServiceC.channelNum;
         self.version = ServiceC.appVersion;
+        //获取调度地址
+        [self _getDispatchAddress];
     }
     return self;
 }
@@ -47,17 +51,30 @@
 {
     NSData *requestData = [ServiceDataInterface service1000RequestDataInterfaceWithVersion:self.version channelID:self.zdNum deviceType:self.zdType];
     NSString *s = @"http://112.124.104.99:12346";
-//    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:s] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
-//    request.HTTPMethod = @"POST";
-//    request.HTTPBody = requestData;
-    [_httpManager POST:s parameters:requestData progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        success();
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        failure();
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:s] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+    request.HTTPMethod = @"POST";
+    request.HTTPBody = requestData;
+    NSURLSessionDataTask *task = [_httpManager dataTaskWithRequest:request uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (httpResponse.statusCode == 200) {
+            Service1000Parser *parse = [[Service1000Parser alloc] init];
+            NSData *data = responseObject;
+            if ([data isKindOfClass:[NSData class]]) {
+                [parse parseWithData:data];
+            }
+            VCLogDispatchLayer(@"dipatch success %@", parse.dataItem.hqserverAddrlist);
+        } else {
+            VCLogDispatchLayer(@"dipatch failure %@", error.description);
+        }
     }];
+    [task resume];
 }
 
 
 #pragma mark - private
+- (void)_getDispatchAddress
+{
+    
+}
 
 @end

@@ -1,0 +1,16 @@
+//
+//  PrinceSon.pch
+//  PrinceSon
+//
+//  Created by wangmingquan on 1/6/16.
+//  Copyright © 2016年 wangmingquan. All rights reserved.
+//
+
+#ifndef PrinceSon_pch
+#define PrinceSon_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "VCLogManagement.h"
+
+#endif /* PrinceSon_pch */

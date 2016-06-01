@@ -13,7 +13,6 @@
 
 + (NSData *)service1000RequestDataInterfaceWithVersion:(NSString *)version channelID:(NSString *)channelID deviceType:(NSString *)deviceType
 {
-    version = @"8.34";
     NSMutableData *bodyData = [NSMutableData data];
     [ServiceUtil writeInData:bodyData str:version];
     [ServiceUtil writeInData:bodyData str:channelID];
