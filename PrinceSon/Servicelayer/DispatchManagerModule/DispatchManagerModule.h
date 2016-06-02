@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^DispatchManagerBlock) (void);
+typedef void(^DispatchManagerBlock) (id data);
 
 @interface DispatchManagerModule : NSObject
 

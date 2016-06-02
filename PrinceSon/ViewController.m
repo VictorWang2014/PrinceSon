@@ -64,9 +64,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        [_dispatchModule requestMarketServerIPWithSuccess:^{
+        [_dispatchModule requestMarketServerIPWithSuccess:^(id data) {
             NSLog(@"success");
-        } failure:^{
+        } failure:^(id data) {
             NSLog(@"failure");
         }];
     } else if (indexPath.row == self.list.count-1) {

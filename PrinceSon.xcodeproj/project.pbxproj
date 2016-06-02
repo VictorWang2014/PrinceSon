@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		960A609C1CFED18100878204 /* VCLogManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A609B1CFED18100878204 /* VCLogManagement.m */; };
 		960A60A21CFEE55600878204 /* ServerConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 960A60A11CFEE55600878204 /* ServerConfig.plist */; };
+		9644BA251D0022240015E03D /* FileManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644BA241D0022240015E03D /* FileManagerModule.m */; };
 		9658DDDA1CF8199D007CB1CF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DDD91CF8199D007CB1CF /* main.m */; };
 		9658DDDD1CF8199D007CB1CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DDDC1CF8199D007CB1CF /* AppDelegate.m */; };
 		9658DDE01CF8199D007CB1CF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DDDF1CF8199D007CB1CF /* ViewController.m */; };
@@ -39,6 +40,8 @@
 		960A609B1CFED18100878204 /* VCLogManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VCLogManagement.m; path = ThirtyParty/LogManager/VCLogManagement.m; sourceTree = "<group>"; };
 		960A609E1CFED2CC00878204 /* PrinceSon.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinceSon.pch; sourceTree = "<group>"; };
 		960A60A11CFEE55600878204 /* ServerConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ServerConfig.plist; path = Source/Configure/ServerConfig.plist; sourceTree = "<group>"; };
+		9644BA231D0022240015E03D /* FileManagerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileManagerModule.h; path = Utillayer/FileManagerModule/FileManagerModule.h; sourceTree = "<group>"; };
+		9644BA241D0022240015E03D /* FileManagerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileManagerModule.m; path = Utillayer/FileManagerModule/FileManagerModule.m; sourceTree = "<group>"; };
 		9658DDD51CF8199C007CB1CF /* PrinceSon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrinceSon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9658DDD91CF8199D007CB1CF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9658DDDB1CF8199D007CB1CF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -120,6 +123,15 @@
 			name = Configure;
 			sourceTree = "<group>";
 		};
+		9644BA221D0021FE0015E03D /* FileManagerModule */ = {
+			isa = PBXGroup;
+			children = (
+				9644BA231D0022240015E03D /* FileManagerModule.h */,
+				9644BA241D0022240015E03D /* FileManagerModule.m */,
+			);
+			name = FileManagerModule;
+			sourceTree = "<group>";
+		};
 		9658DDCC1CF8199C007CB1CF = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +207,7 @@
 		9658DDF11CF83C3A007CB1CF /* Utillayer */ = {
 			isa = PBXGroup;
 			children = (
+				9644BA221D0021FE0015E03D /* FileManagerModule */,
 			);
 			name = Utillayer;
 			sourceTree = "<group>";
@@ -384,6 +397,7 @@
 				9658DE2D1CF8483D007CB1CF /* AFURLSessionManager.m in Sources */,
 				9658DE291CF8483D007CB1CF /* AFNetworkReachabilityManager.m in Sources */,
 				9658DE461CFBE928007CB1CF /* ServiceDataInterface.m in Sources */,
+				9644BA251D0022240015E03D /* FileManagerModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
