@@ -10,16 +10,19 @@
 
 typedef enum {
     VCLogLevelThreadLayer = 1,
+    VCLogLevelSocketLayer,
     VCLogLevelDispatchLayer,
     VCLogLevelDataRequet,
     VCLogLevelHomeLayer,
-    VCLogLevelUser1,
+    VCLogLevelUser1,//王明权用
     VCLogLevelUser2,
     VCLogLevelUser3,
 }VCLogLevel;
 
 
 #define VCLogThreadLayer(format, ...) VCLogPrint(__TIME__, __FUNCTION__,VCLogLevelThreadLayer, __LINE__,format,##__VA_ARGS__);
+
+#define VCLogSocketLayer(format, ...) VCLogPrint(__TIME__, __FUNCTION__,VCLogLevelSocketLayer, __LINE__,format,##__VA_ARGS__);
 
 #define VCLogDispatchLayer(format, ...) VCLogPrint(__TIME__, __FUNCTION__,VCLogLevelDispatchLayer, __LINE__,format,##__VA_ARGS__);
 
@@ -36,16 +39,17 @@ typedef enum {
 
 // 基础日志输出
 #define ThreadLayer @"treadlayer"
+#define SocketLayer @"socketlayer"
 #define DataRequet @"datarequet"
 #define Dispatch @"dispatchlayer"
 #define HomeLayer @"homelayer"
 // 自定义日志输出  定义的参数中包含基础的输出级别
-#define User1 @"user1"ThreadLayer
+#define User1 @"user1"ThreadLayer SocketLayer Dispatch
 #define User2 @"user2"ThreadLayer DataRequet
 #define User3 @"user3" DataRequet
 
 
-#define VCLogLevelDefault VCLogLevelDispatchLayer
+#define VCLogLevelDefault VCLogLevelUser1
 
 void VCLogPrint(const char *time,const char *function, int loglevel, int linenum, NSString *format,...);
 

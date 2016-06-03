@@ -15,7 +15,7 @@ void VCLogPrint(const char *time, const char *function, int loglevel, int linenu
         va_start(args, format);
         NSString* str = [[NSString alloc] initWithFormat:format arguments:args];
         va_end(args);
-        fprintf(stderr,"%s %s %d %s\n", time,function,linenum,[str UTF8String]);
+        fprintf(stderr,"%s %s [%d] ---> %s\n", time,function,linenum,[str UTF8String]);
     }
 }
 
@@ -65,6 +65,9 @@ void VCLogPrint(const char *time, const char *function, int loglevel, int linenu
             case VCLogLevelDispatchLayer:
                 self.level = Dispatch;
                 break;
+            case VCLogLevelSocketLayer:
+                self.level = SocketLayer;
+                break;
             default:
                 break;
         }
@@ -96,6 +99,9 @@ void VCLogPrint(const char *time, const char *function, int loglevel, int linenu
             break;
         case VCLogLevelDispatchLayer:
             level = Dispatch;
+            break;
+        case VCLogLevelSocketLayer:
+            level = SocketLayer;
             break;
         default:
             break;

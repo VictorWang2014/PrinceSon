@@ -78,7 +78,6 @@
     [task resume];
 }
 
-
 #pragma mark - private
 - (void)_saveDispatchAddress:(NSArray *)addressArray
 {
@@ -94,7 +93,7 @@
         for (int i = 0; i < tmpArray.count; i++) {
             NSString *str = [tmpArray objectAtIndex:i];
             NSArray *a = [str componentsSeparatedByString:@":"];
-            if (a.count == 2) {
+            if (a.count >= 2) {
                 NSString *host = [a objectAtIndex:0];
                 NSString *port = [a objectAtIndex:1];
                 NSMutableDictionary *dic = [NSMutableDictionary dictionary];
