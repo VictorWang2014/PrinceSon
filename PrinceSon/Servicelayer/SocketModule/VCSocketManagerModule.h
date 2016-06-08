@@ -16,6 +16,8 @@
 - (void)socketDidDisConnected:(VCSocketManagerModule *)socketModule;
 - (void)socket:(VCSocketManagerModule *)socketModule willDisConnectedError:(NSError *)err;
 
+- (NSDictionary *)socket:(VCSocketManagerModule *)socketModule parseHeaderWithData:(NSData *)data;
+
 @end
 
 @interface VCSocketManagerModule : NSObject
@@ -27,6 +29,6 @@
 
 - (void)disConnectSocket;
 
-- (void)sendRequestData:(NSData *)data;
+- (void)sendRequestData:(NSMutableDictionary *)dataDic;
 
 @end

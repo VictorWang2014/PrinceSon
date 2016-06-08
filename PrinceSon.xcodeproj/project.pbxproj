@@ -33,6 +33,7 @@
 		9658DE4C1CFD646A007CB1CF /* ServiceContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE4B1CFD646A007CB1CF /* ServiceContext.m */; };
 		9658DE501CFD7391007CB1CF /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE4F1CFD7391007CB1CF /* SSKeychain.m */; };
 		9658DE531CFD73CF007CB1CF /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE521CFD73CF007CB1CF /* TestViewController.m */; };
+		9686EF241D08164200432B39 /* MarketDataManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686EF231D08164200432B39 /* MarketDataManagerModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,8 @@
 		9658DE4F1CFD7391007CB1CF /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSKeychain.m; path = ThirtyParty/SSKeyChain/SSKeychain.m; sourceTree = "<group>"; };
 		9658DE511CFD73CF007CB1CF /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		9658DE521CFD73CF007CB1CF /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		9686EF221D08164200432B39 /* MarketDataManagerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarketDataManagerModule.h; path = Servicelayer/MarketDataManagerModule/MarketDataManagerModule.h; sourceTree = "<group>"; };
+		9686EF231D08164200432B39 /* MarketDataManagerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarketDataManagerModule.m; path = Servicelayer/MarketDataManagerModule/MarketDataManagerModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 		9658DDEF1CF83C1D007CB1CF /* Servicelayer */ = {
 			isa = PBXGroup;
 			children = (
+				9686EF211D08160D00432B39 /* MarketDataManagerModule */,
 				9658DE431CFBE7BC007CB1CF /* ServiceDataInterface */,
 				9658DE3F1CFBE36D007CB1CF /* DataItem */,
 				9658DE381CFBE1F0007CB1CF /* ParseModule */,
@@ -305,6 +309,15 @@
 			name = SSKeyChain;
 			sourceTree = "<group>";
 		};
+		9686EF211D08160D00432B39 /* MarketDataManagerModule */ = {
+			isa = PBXGroup;
+			children = (
+				9686EF221D08164200432B39 /* MarketDataManagerModule.h */,
+				9686EF231D08164200432B39 /* MarketDataManagerModule.m */,
+			);
+			name = MarketDataManagerModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -396,6 +409,7 @@
 				9658DE2B1CF8483D007CB1CF /* AFURLRequestSerialization.m in Sources */,
 				9658DE2D1CF8483D007CB1CF /* AFURLSessionManager.m in Sources */,
 				9658DE291CF8483D007CB1CF /* AFNetworkReachabilityManager.m in Sources */,
+				9686EF241D08164200432B39 /* MarketDataManagerModule.m in Sources */,
 				9658DE461CFBE928007CB1CF /* ServiceDataInterface.m in Sources */,
 				9644BA251D0022240015E03D /* FileManagerModule.m in Sources */,
 			);

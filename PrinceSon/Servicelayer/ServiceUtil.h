@@ -8,6 +8,30 @@
 
 #import <Foundation/Foundation.h>
 
+typedef struct Socket_NORMALHEAD_t
+{
+    char tag;
+    short type;
+    short attrs;
+}Socket_NORMALHEAD;
+
+typedef struct Socket_DATAHEAD_t
+{
+    char	tag;
+    short	type;
+    short 	attrs;
+    unsigned short	length;
+}Socket_DATAHEAD,*Socket_LPDATAHEAD;
+
+typedef struct Socket_DATAHEAD_t_EX
+{
+    char	tag;
+    short	type;
+    short 	attrs;
+    unsigned int	length;
+}Socket_DATAHEAD_EX;
+
+
 @interface ServiceUtil : NSObject
 
 + (void)writeInData:(NSMutableData *)data str:(NSString *)str;
@@ -19,5 +43,8 @@
 + (char)readByteFromData:(NSData *)data pos:(int *)pos;
 + (short)readShortFromData:(NSData *)data pos:(int *)pos;
 + (int)readIntFromData:(NSData *)data pos:(int *)pos;
+
+//
++ (Socket_NORMALHEAD *)packHeaderWithData:(NSData *)packData;
 
 @end

@@ -14,7 +14,8 @@
 }
 
 @property (nonatomic, strong) NSMutableData *receiveData;
-
+@property (nonatomic, strong) NSMutableArray *queueArray;
+@property (nonatomic, strong) dispatch_queue_t socketQueue;//
 
 @end
 
@@ -37,6 +38,7 @@
     self = [super init];
     if (self) {
         _socket = [[AsyncSocket alloc] initWithDelegate:self];
+        self.queueArray = [NSMutableArray array];
     }
     return self;
 }
@@ -50,9 +52,10 @@
     [_socket connectToHost:host onPort:port error:&error];
 }
 
-- (void)sendRequestData:(NSData *)data
+- (void)sendRequestData:(NSMutableDictionary *)dataDic
 {
-    [_socket writeData:data withTimeout:-1 tag:0];
+    [self.queueArray addObject:dataDic];
+    [_socket writeData:nil withTimeout:-1 tag:0];
 }
 
 - (void)disConnectSocket
@@ -64,7 +67,8 @@
 - (void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err
 {
     VCLogSocketLayer(@"socket will disconnectwitherror %@", err.description);
-    
+    [self disConnectSocket];
+    [self.queueArray removeAllObjects];
     if (self.delegate && [self.delegate respondsToSelector:@selector(socket:willDisConnectedError:)]) {
         [self.delegate socket:self willDisConnectedError:err];
     }
@@ -110,6 +114,9 @@
     } else {
         self.receiveData = [NSMutableData dataWithData:data];
     }
+    // {@"tag":返回包标记,@"dataLength":数据包内容实体长度, @"type":数据包类型, @"headerLength":数据包包头长度}
+    NSDictionary *headerDict = [self.delegate socket:self parseHeaderWithData:self.receiveData];
+    
     
     [sock readDataWithTimeout:-1 tag:0];
 }

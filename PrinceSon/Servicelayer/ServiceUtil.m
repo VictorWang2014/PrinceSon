@@ -51,27 +51,6 @@
         }
     }
     return st;
-//    NSString *result = nil;
-//    short len = 0;
-//    if (*pos+2 <= [data length]) {
-//        [data getBytes:&len range:NSMakeRange(*pos,2)];
-//        *pos+=2;
-//        if (len > 0 && *pos+len <= [data length]) {
-//            //			char * buffer = malloc(len+1);
-//            //			memset(buffer,0,len+1);
-//            char * buffer = calloc(len+1, 1);
-//            [data getBytes:buffer range:NSMakeRange(*pos,len)];
-//            *pos += len;
-//            result = [NSString stringWithUTF8String:buffer];
-//            if(!result){
-//                //针对非utf8编码字符串做特殊处理
-//                //                result = [NSString stringWithCString:buffer encoding:[NSString defaultCStringEncoding]];
-//            }
-//            
-//            free(buffer);
-//        }
-//    }
-//    return result ? result : @"";
 }
 
 + (char)readByteFromData:(NSData *)data pos:(int *)pos
@@ -102,6 +81,15 @@
         *pos = *pos+sizeof(int);
     }
     return da;
+}
+
++ (Socket_NORMALHEAD *)packHeaderWithData:(NSData *)packData
+{
+    Socket_NORMALHEAD *head = nil;
+    if (packData.length > sizeof(Socket_NORMALHEAD)) {
+        head = (Socket_NORMALHEAD *)((char *)[packData bytes]);
+    }
+    return head;
 }
 
 @end
