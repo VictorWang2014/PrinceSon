@@ -18,6 +18,8 @@
 
 - (NSDictionary *)socket:(VCSocketManagerModule *)socketModule parseHeaderWithData:(NSData *)data;
 
+- (NSInteger)socket:(VCSocketManagerModule *)socketModule headerTagWithData:(NSData *)data;
+
 @end
 
 @interface VCSocketManagerModule : NSObject

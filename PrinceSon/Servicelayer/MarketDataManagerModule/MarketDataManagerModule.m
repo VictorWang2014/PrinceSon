@@ -59,10 +59,19 @@
         int dataLen = 0;
         NSUInteger headerLen = attr == 1 ? sizeof(Socket_DATAHEAD_EX) : sizeof(Socket_DATAHEAD);
         [data getBytes:&dataLen range:NSMakeRange(sizeof(Socket_NORMALHEAD), byteLen)];
-        headerDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:tag], @"tag", [NSNumber numberWithInteger:type], @"type", [NSNumber numberWithUnsignedInteger:dataLen], @"dataLength", [NSNumber numberWithUnsignedInteger:headerLen], @"headerLength", nil];
+        headerDic = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:tag], @"tag", [NSNumber numberWithInteger:type], @"type", [NSNumber numberWithUnsignedInteger:(NSUInteger)dataLen], @"dataLength", [NSNumber numberWithUnsignedInteger:headerLen], @"headerLength", nil];
     }
     return headerDic;
 }
 
+- (NSInteger)socket:(VCSocketManagerModule *)socketModule headerTagWithData:(NSData *)data
+{
+    Socket_NORMALHEAD *header = [ServiceUtil packHeaderWithData:data];
+    NSInteger tag = -1;
+    if (header) {
+         tag = (NSInteger)header->tag;
+    }
+    return tag;
+}
 
 @end
