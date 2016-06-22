@@ -1,0 +1,24 @@
+{
+  "objtag": "bbbbb",
+  "packagetag": "qwieuaksjdhfkaj",
+  "reqdic": [
+    {
+      "packagecallbacktag0": {
+        "reqdata": "byte stream",
+        "reqtype": "2955",
+        "needparse": false
+      }
+    },
+    {
+      "packagecallbacktag1": {
+        "reqdata": "byte stream",
+        "reqtype": "2955",
+        "needparse": true
+      }
+    }
+  ],
+  "group": "0,1",
+  "curpackageidx": 0,
+  "rspdata": "byte stream",
+  "reccompletetag": true
+}

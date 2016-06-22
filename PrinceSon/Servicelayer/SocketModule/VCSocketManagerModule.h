@@ -20,6 +20,9 @@
 
 - (NSInteger)socket:(VCSocketManagerModule *)socketModule headerTagWithData:(NSData *)data;
 
+// 根据packagedic 解析返回的包数据 并通知给对应的组件
+- (void)socket:(VCSocketManagerModule *)socketModule parseWithPackageDic:(NSMutableDictionary *)packageDic;
+
 @end
 
 @interface VCSocketManagerModule : NSObject

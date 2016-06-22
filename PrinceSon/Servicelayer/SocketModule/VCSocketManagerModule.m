@@ -60,16 +60,30 @@
         NSData *packageData = [NSData dataWithBytes:[self.receiveData bytes] length:headerL+dataL];
         NSInteger tag = [self.delegate socket:self headerTagWithData:packageData];
         NSMutableDictionary *packageItem = [self _getPackageItemWithTag:tag];
-        //判断是否是组包数据
-        int groupTag = [[packageItem objectForKey:@"group"] intValue];
-        if (groupTag == 1) {
+        //判断是否是组包数据    其实不要判断是不是组包   只需要判断curpageageidx是否等于
+        int curIdx = [[packageItem objectForKey:@"curpackageidx"] intValue];
+        NSMutableArray *reqArray = [packageItem objectForKey:@"reqdic"];
+        NSMutableDictionary *allPackageDic = [reqArray objectAtIndex:0];
+        NSArray *allPackeageKeys = [[allPackageDic allKeys] sortedArrayUsingSelector:@selector(compare:)];
+        NSString *curpackageKey = [allPackeageKeys objectAtIndex:curIdx];
+        if (reqArray.count > 0) {//有请求的数据
+            NSMutableDictionary *curReqPackageDic = [allPackageDic objectForKey:curpackageKey];
             
-        } else {
+            //将获取到的数据拼包后通知给组件
+            NSMutableDictionary *sendDic = [NSMutableDictionary dictionary];
+            [sendDic setObject:curpackageKey forKey:@"packagecallbacktag"];
+            [sendDic setObject:packageData forKey:@"packagedata"];
+            [sendDic setObject:packageItem forKey:@"packageitem"];
+            if (self.delegate && [self.delegate respondsToSelector:@selector(socket:parseWithPackageDic:)]) {
+                [self.delegate socket:self parseWithPackageDic:sendDic];
+            }
+            //解析完这个数据包后将解析的包的个数＋1，以便之后
+            [packageItem setObject:[NSNumber numberWithInt:curIdx++] forKey:@"curpackageidx"];
+        } else {// 没有请求的包数据
             
         }
-        
         //之后将数据从receivedata中剔除
-        if ([packageItem allKeys].count > 0) {
+        if (allPackeageKeys.count == curIdx) {
             [self _removePackageItemWithTag:tag];
         }
         [self _deleteDataLength:dataL+headerL];
@@ -116,7 +130,7 @@
         [self.queueArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             NSDictionary *tmp = (NSDictionary *)obj;
             if ([tmp isKindOfClass:[NSDictionary class]]) {
-                NSString *tagKey = [tmp objectForKey:@"tag"];
+                NSString *tagKey = [tmp objectForKey:@"packagetag"];
                 int groupTag = [[tmp objectForKey:@"group"] intValue];
                 if ([tagKey integerValue] == tag) {
                     if (groupTag == 1) {//组包的数据

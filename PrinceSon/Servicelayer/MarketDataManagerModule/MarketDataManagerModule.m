@@ -46,6 +46,15 @@
     
 }
 
+- (void)socket:(VCSocketManagerModule *)socketModule parseWithPackageDic:(NSMutableDictionary *)packageDic
+{
+    NSString *curpackageKey = [packageDic objectForKey:@"packagecallbacktag"];
+    NSData *packageData = [packageDic objectForKey:@"packagedata"];
+    NSMutableDictionary *packageItem = [packageDic objectForKey:@"packageitem"];
+    Socket_NORMALHEAD *header = [ServiceUtil packHeaderWithData:packageData];
+    NSInteger headerl = header
+}
+
 // 解析socket字节流 头部
 - (NSDictionary *)socket:(VCSocketManagerModule *)socketModule parseHeaderWithData:(NSData *)data
 {

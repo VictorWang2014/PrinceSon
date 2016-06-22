@@ -34,6 +34,7 @@
 		9658DE501CFD7391007CB1CF /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE4F1CFD7391007CB1CF /* SSKeychain.m */; };
 		9658DE531CFD73CF007CB1CF /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9658DE521CFD73CF007CB1CF /* TestViewController.m */; };
 		9686EF241D08164200432B39 /* MarketDataManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9686EF231D08164200432B39 /* MarketDataManagerModule.m */; };
+		96A394571D1A749E00748633 /* package_json.json in Resources */ = {isa = PBXBuildFile; fileRef = 96A394561D1A749E00748633 /* package_json.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		9658DE521CFD73CF007CB1CF /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		9686EF221D08164200432B39 /* MarketDataManagerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarketDataManagerModule.h; path = Servicelayer/MarketDataManagerModule/MarketDataManagerModule.h; sourceTree = "<group>"; };
 		9686EF231D08164200432B39 /* MarketDataManagerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarketDataManagerModule.m; path = Servicelayer/MarketDataManagerModule/MarketDataManagerModule.m; sourceTree = "<group>"; };
+		96A394561D1A749E00748633 /* package_json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = package_json.json; path = Source/package_json.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		960A609F1CFEE53100878204 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				96A394561D1A749E00748633 /* package_json.json */,
 				960A60A01CFEE53A00878204 /* Configure */,
 			);
 			name = Source;
@@ -375,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96A394571D1A749E00748633 /* package_json.json in Resources */,
 				960A60A21CFEE55600878204 /* ServerConfig.plist in Resources */,
 				9658DDE81CF8199E007CB1CF /* LaunchScreen.storyboard in Resources */,
 				9658DDE51CF8199E007CB1CF /* Assets.xcassets in Resources */,
