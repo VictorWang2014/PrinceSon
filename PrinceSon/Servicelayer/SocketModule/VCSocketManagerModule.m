@@ -68,7 +68,6 @@
         NSString *curpackageKey = [allPackeageKeys objectAtIndex:curIdx];
         if (reqArray.count > 0) {//有请求的数据
             NSMutableDictionary *curReqPackageDic = [allPackageDic objectForKey:curpackageKey];
-            
             //将获取到的数据拼包后通知给组件
             NSMutableDictionary *sendDic = [NSMutableDictionary dictionary];
             [sendDic setObject:curpackageKey forKey:@"packagecallbacktag"];

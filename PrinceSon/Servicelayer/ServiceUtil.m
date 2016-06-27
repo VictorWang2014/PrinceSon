@@ -83,6 +83,33 @@
     return da;
 }
 
++ (short)readShortByFieldType:(NSData *)data ppos:(int *)ppos fieldType:(int)fieldType bitNum:(short)bitNum
+{
+    short tmp = 0;
+    if ((fieldType >> bitNum) & 0x1) {
+        tmp = [[self class] readShortFromData:data pos:ppos];
+    }
+    return tmp;
+}
+
++ (int)readIntByFieldType:(NSData *)data ppos:(int *)ppos fieldType:(int)fieldType bitNum:(short)bitNum
+{
+    short tmp = 0;
+    if ((fieldType >> bitNum) & 0x1) {
+        tmp = [[self class] readIntFromData:data pos:ppos];
+    }
+    return tmp;
+}
+
++ (int)readByteByFieldType:(NSData *)data ppos:(int *)ppos fieldType:(int)fieldType bitNum:(short)bitNum
+{
+    char tmp = 0;
+    if ((fieldType >> bitNum) & 0x1) {
+        tmp = [[self class] readByteFromData:data pos:ppos];
+    }
+    return tmp;
+}
+
 + (Socket_NORMALHEAD *)packHeaderWithData:(NSData *)packData
 {
     Socket_NORMALHEAD *head = nil;

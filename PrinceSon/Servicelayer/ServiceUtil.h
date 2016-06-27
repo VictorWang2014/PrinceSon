@@ -43,8 +43,10 @@ typedef struct Socket_DATAHEAD_t_EX
 + (char)readByteFromData:(NSData *)data pos:(int *)pos;
 + (short)readShortFromData:(NSData *)data pos:(int *)pos;
 + (int)readIntFromData:(NSData *)data pos:(int *)pos;
++ (short)readShortByFieldType:(NSData *)data ppos:(int *)ppos fieldType:(int)fieldType bitNum:(short)bitNum;
++ (int)readIntByFieldType:(NSData *)data ppos:(int *)ppos fieldType:(int)fieldType bitNum:(short)bitNum;
++ (int)readByteByFieldType:(NSData *)data ppos:(int *)ppos fieldType:(int)fieldType bitNum:(short)bitNum;
 
-//
 + (Socket_NORMALHEAD *)packHeaderWithData:(NSData *)packData;
 
 @end
