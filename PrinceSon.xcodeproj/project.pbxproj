@@ -10,6 +10,8 @@
 		960A609C1CFED18100878204 /* VCLogManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = 960A609B1CFED18100878204 /* VCLogManagement.m */; };
 		960A60A21CFEE55600878204 /* ServerConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 960A60A11CFEE55600878204 /* ServerConfig.plist */; };
 		9619B76B1D211A9D0080183C /* MarketDataInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9619B76A1D211A9D0080183C /* MarketDataInterface.m */; };
+		9619B7701D227A5A0080183C /* RequestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9619B76F1D227A5A0080183C /* RequestModule.m */; };
+		9619B7761D227EB20080183C /* MessageCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9619B7751D227EB20080183C /* MessageCenterManager.m */; };
 		9644BA251D0022240015E03D /* FileManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644BA241D0022240015E03D /* FileManagerModule.m */; };
 		964EDA161D1B8CE8000400FD /* MarketDataParseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EDA151D1B8CE8000400FD /* MarketDataParseInterface.m */; };
 		964EDA191D1BDE41000400FD /* MarketDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EDA181D1BDE41000400FD /* MarketDataItem.m */; };
@@ -47,6 +49,11 @@
 		960A60A11CFEE55600878204 /* ServerConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ServerConfig.plist; path = Source/Configure/ServerConfig.plist; sourceTree = "<group>"; };
 		9619B7691D211A9D0080183C /* MarketDataInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarketDataInterface.h; path = Servicelayer/ServiceDataInterface/MarketDataInterface.h; sourceTree = "<group>"; };
 		9619B76A1D211A9D0080183C /* MarketDataInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MarketDataInterface.m; path = Servicelayer/ServiceDataInterface/MarketDataInterface.m; sourceTree = "<group>"; };
+		9619B76C1D226CAC0080183C /* requestpackage_json.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; name = requestpackage_json.geojson; path = Source/requestpackage_json.geojson; sourceTree = "<group>"; };
+		9619B76E1D227A5A0080183C /* RequestModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestModule.h; path = Servicelayer/RequestModule/RequestModule.h; sourceTree = "<group>"; };
+		9619B76F1D227A5A0080183C /* RequestModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestModule.m; path = Servicelayer/RequestModule/RequestModule.m; sourceTree = "<group>"; };
+		9619B7741D227EB20080183C /* MessageCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCenterManager.h; path = Servicelayer/RequestModule/MessageCenterManager.h; sourceTree = "<group>"; };
+		9619B7751D227EB20080183C /* MessageCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCenterManager.m; path = Servicelayer/RequestModule/MessageCenterManager.m; sourceTree = "<group>"; };
 		9644BA231D0022240015E03D /* FileManagerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileManagerModule.h; path = Utillayer/FileManagerModule/FileManagerModule.h; sourceTree = "<group>"; };
 		9644BA241D0022240015E03D /* FileManagerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileManagerModule.m; path = Utillayer/FileManagerModule/FileManagerModule.m; sourceTree = "<group>"; };
 		964EDA141D1B8CE8000400FD /* MarketDataParseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarketDataParseInterface.h; path = Servicelayer/ParseModule/MarketDataParseInterface.h; sourceTree = "<group>"; };
@@ -125,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				96A394561D1A749E00748633 /* package_json.json */,
+				9619B76C1D226CAC0080183C /* requestpackage_json.geojson */,
 				960A60A01CFEE53A00878204 /* Configure */,
 			);
 			name = Source;
@@ -136,6 +144,17 @@
 				960A60A11CFEE55600878204 /* ServerConfig.plist */,
 			);
 			name = Configure;
+			sourceTree = "<group>";
+		};
+		9619B76D1D2279940080183C /* RequestModule */ = {
+			isa = PBXGroup;
+			children = (
+				9619B76E1D227A5A0080183C /* RequestModule.h */,
+				9619B76F1D227A5A0080183C /* RequestModule.m */,
+				9619B7741D227EB20080183C /* MessageCenterManager.h */,
+				9619B7751D227EB20080183C /* MessageCenterManager.m */,
+			);
+			name = RequestModule;
 			sourceTree = "<group>";
 		};
 		9644BA221D0021FE0015E03D /* FileManagerModule */ = {
@@ -198,6 +217,7 @@
 		9658DDEF1CF83C1D007CB1CF /* Servicelayer */ = {
 			isa = PBXGroup;
 			children = (
+				9619B76D1D2279940080183C /* RequestModule */,
 				9658DE431CFBE7BC007CB1CF /* ServiceDataInterface */,
 				9658DE3F1CFBE36D007CB1CF /* DataItem */,
 				9658DE381CFBE1F0007CB1CF /* ParseModule */,
@@ -416,6 +436,7 @@
 				9658DDE01CF8199D007CB1CF /* ViewController.m in Sources */,
 				9658DE2A1CF8483D007CB1CF /* AFSecurityPolicy.m in Sources */,
 				9658DE3E1CFBE300007CB1CF /* ServiceParserModule.m in Sources */,
+				9619B7701D227A5A0080183C /* RequestModule.m in Sources */,
 				9658DE501CFD7391007CB1CF /* SSKeychain.m in Sources */,
 				9658DDDD1CF8199D007CB1CF /* AppDelegate.m in Sources */,
 				9658DE2C1CF8483D007CB1CF /* AFURLResponseSerialization.m in Sources */,
@@ -424,6 +445,7 @@
 				9658DE491CFC0CA3007CB1CF /* ServiceUtil.m in Sources */,
 				9658DE181CF8471A007CB1CF /* AsyncSocket.m in Sources */,
 				9658DE531CFD73CF007CB1CF /* TestViewController.m in Sources */,
+				9619B7761D227EB20080183C /* MessageCenterManager.m in Sources */,
 				9658DE421CFBE3B2007CB1CF /* ServiceDataItemModule.m in Sources */,
 				9658DDDA1CF8199D007CB1CF /* main.m in Sources */,
 				9658DE281CF8483D007CB1CF /* AFHTTPSessionManager.m in Sources */,
