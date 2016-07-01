@@ -19,3 +19,9 @@
 @property (nonatomic, strong) NSString *appVersion;
 
 @end
+
+@interface NSObject (UUIDString)
+
+- (NSString *)uuidString;
+
+@end

@@ -7,13 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VCSocketManagerModule.h"
 
 
 @interface MarketDataManagerModule : NSObject
 
 + (MarketDataManagerModule *)shareInstance;
 
-@property (nonatomic, assign) id<SocketManagerModuleDelegate>delegate;
 
 @end

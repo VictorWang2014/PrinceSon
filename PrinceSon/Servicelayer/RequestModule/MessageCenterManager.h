@@ -10,7 +10,8 @@
 
 @interface MessageCenterManager : NSObject
 
+- (void)addObserver:(NSString *)observer selector:(SEL)selector name:(id)name;
+- (void)postNotificationName:(NSString *)name object:(id)object userInfo:(id)info;
 
-+ (void)registerWithPackageDic:(NSMutableDictionary *)packageDic;
 
 @end

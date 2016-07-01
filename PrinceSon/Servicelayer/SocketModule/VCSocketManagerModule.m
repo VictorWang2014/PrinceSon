@@ -151,6 +151,32 @@
     }
 }
 
+static int packageTag = 0;
+- (char)_getPackageTag
+{
+    packageTag++;
+    if (packageTag > 240) {
+        packageTag = 1;
+    }
+    if (packageTag == 123 || packageTag == 125) {
+        packageTag++;
+    }
+    return 3;
+}
+
+- (void)_addSendPackageDic:(NSMutableDictionary *)packageDic
+{
+    [packageDic setObject:[NSNumber numberWithInteger:packageTag] forKey:@"packagetag"];
+    NSArray *reqArray = [packageDic objectForKey:@"reqdic"];
+    NSMutableDictionary *dic = [reqArray objectAtIndex:0];
+    NSMutableData *packageData = [NSMutableData data];
+    [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        NSMutableDictionary *itemPackageDic = (NSMutableDictionary *)obj;
+        [itemPackageDic setObject:[NSNumber numberWithInteger:packageTag] forKey:@"packagetag"];
+    }];
+    
+}
+
 #pragma mark - public
 - (void)connectToServerWithHost:(NSString *)host port:(UInt16)port
 {
@@ -160,9 +186,15 @@
 
 - (void)sendRequestData:(NSMutableDictionary *)dataDic
 {
-    [self.queueArray addObject:dataDic];
-    
-    [_socket writeData:nil withTimeout:-1 tag:0];
+    if (_socket.isConnected) {
+        [self _addSendPackageDic:dataDic];
+        [_socket writeData:nil withTimeout:-1 tag:0];
+    } else {
+        [self disConnectSocket];
+        [self.queueArray removeAllObjects];
+        [self _addSendPackageDic:dataDic];
+        self.receiveData = [NSMutableData data];
+    }
 }
 
 - (void)disConnectSocket
@@ -189,21 +221,6 @@
     }
 }
 
-//- (void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket
-//{
-//    
-//}
-
-//- (NSRunLoop *)onSocket:(AsyncSocket *)sock wantsRunLoopForNewSocket:(AsyncSocket *)newSocket
-//{
-//    
-//}
-
-//- (BOOL)onSocketWillConnect:(AsyncSocket *)sock
-//{
-//    
-//}
-
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port
 {
     VCLogSocketLayer(@"socket connect success host %@, port %lu", host, port);
@@ -224,36 +241,5 @@
 {
     
 }
-
-//- (void)onSocket:(AsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag
-//{
-//
-//}
-
-//- (void)onSocket:(AsyncSocket *)sock didWritePartialDataOfLength:(NSUInteger)partialLength tag:(long)tag
-//{
-//    
-//}
-
-//- (NSTimeInterval)onSocket:(AsyncSocket *)sock
-//  shouldTimeoutReadWithTag:(long)tag
-//                   elapsed:(NSTimeInterval)elapsed
-//                 bytesDone:(NSUInteger)length
-//{
-//    
-//}
-
-//- (NSTimeInterval)onSocket:(AsyncSocket *)sock
-// shouldTimeoutWriteWithTag:(long)tag
-//                   elapsed:(NSTimeInterval)elapsed
-//                 bytesDone:(NSUInteger)length
-//{
-//    
-//}
-
-//- (void)onSocketDidSecure:(AsyncSocket *)sock
-//{
-//    
-//}
 
 @end

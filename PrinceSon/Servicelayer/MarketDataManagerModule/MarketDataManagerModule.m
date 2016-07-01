@@ -9,6 +9,13 @@
 #import "MarketDataManagerModule.h"
 #import "ServiceUtil.h"
 #import "MarketDataParseInterface.h"
+#import "VCSocketManagerModule.h"
+
+@interface MarketDataManagerModule ()<SocketManagerModuleDelegate>
+
+@property (nonatomic, strong) VCSocketManagerModule *socketModule;
+
+@end
 
 @implementation MarketDataManagerModule
 
@@ -26,9 +33,16 @@
 {
     self = [super init];
     if (self) {
-        
+        self.socketModule = [[VCSocketManagerModule alloc] init];
+        self.socketModule.delegate = self;
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(sendPackageDic:) name:@"sendrequestdata" object:nil];
     }
     return self;
+}
+
+- (void)sendPackageDic:(NSNotification *)notify {
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:[notify userInfo]];
+    [self.socketModule sendRequestData:dic];
 }
 
 #pragma mark - SocketManagerModuleDelegate

@@ -12,6 +12,7 @@
 		9619B76B1D211A9D0080183C /* MarketDataInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 9619B76A1D211A9D0080183C /* MarketDataInterface.m */; };
 		9619B7701D227A5A0080183C /* RequestModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9619B76F1D227A5A0080183C /* RequestModule.m */; };
 		9619B7761D227EB20080183C /* MessageCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9619B7751D227EB20080183C /* MessageCenterManager.m */; };
+		9619B7791D23CBD80080183C /* DataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9619B7781D23CBD80080183C /* DataRequest.m */; };
 		9644BA251D0022240015E03D /* FileManagerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 9644BA241D0022240015E03D /* FileManagerModule.m */; };
 		964EDA161D1B8CE8000400FD /* MarketDataParseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EDA151D1B8CE8000400FD /* MarketDataParseInterface.m */; };
 		964EDA191D1BDE41000400FD /* MarketDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 964EDA181D1BDE41000400FD /* MarketDataItem.m */; };
@@ -54,6 +55,8 @@
 		9619B76F1D227A5A0080183C /* RequestModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequestModule.m; path = Servicelayer/RequestModule/RequestModule.m; sourceTree = "<group>"; };
 		9619B7741D227EB20080183C /* MessageCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCenterManager.h; path = Servicelayer/RequestModule/MessageCenterManager.h; sourceTree = "<group>"; };
 		9619B7751D227EB20080183C /* MessageCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCenterManager.m; path = Servicelayer/RequestModule/MessageCenterManager.m; sourceTree = "<group>"; };
+		9619B7771D23CBD80080183C /* DataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataRequest.h; path = Servicelayer/RequestModule/DataRequest.h; sourceTree = "<group>"; };
+		9619B7781D23CBD80080183C /* DataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataRequest.m; path = Servicelayer/RequestModule/DataRequest.m; sourceTree = "<group>"; };
 		9644BA231D0022240015E03D /* FileManagerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileManagerModule.h; path = Utillayer/FileManagerModule/FileManagerModule.h; sourceTree = "<group>"; };
 		9644BA241D0022240015E03D /* FileManagerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileManagerModule.m; path = Utillayer/FileManagerModule/FileManagerModule.m; sourceTree = "<group>"; };
 		964EDA141D1B8CE8000400FD /* MarketDataParseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MarketDataParseInterface.h; path = Servicelayer/ParseModule/MarketDataParseInterface.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				9619B76F1D227A5A0080183C /* RequestModule.m */,
 				9619B7741D227EB20080183C /* MessageCenterManager.h */,
 				9619B7751D227EB20080183C /* MessageCenterManager.m */,
+				9619B7771D23CBD80080183C /* DataRequest.h */,
+				9619B7781D23CBD80080183C /* DataRequest.m */,
 			);
 			name = RequestModule;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				964EDA191D1BDE41000400FD /* MarketDataItem.m in Sources */,
 				960A609C1CFED18100878204 /* VCLogManagement.m in Sources */,
 				9658DE4C1CFD646A007CB1CF /* ServiceContext.m in Sources */,
+				9619B7791D23CBD80080183C /* DataRequest.m in Sources */,
 				9658DE341CF84CC5007CB1CF /* DispatchManagerModule.m in Sources */,
 				9658DDE01CF8199D007CB1CF /* ViewController.m in Sources */,
 				9658DE2A1CF8483D007CB1CF /* AFSecurityPolicy.m in Sources */,

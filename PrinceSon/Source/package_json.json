@@ -1,24 +1,27 @@
 {
   "objtag": "bbbbb",
-  "packagetag": "qwieuaksjdhfkaj",
+  "packagetag": "212",
+  "callbackid":"39823923",
   "reqdic": [
     {
       "packagecallbacktag0": {
         "reqdata": "byte stream",
         "reqtype": "2955",
+        "packagetag": "212",
         "needparse": false
       }
     },
     {
       "packagecallbacktag1": {
         "reqdata": "byte stream",
+        "packagetag": "212",
         "reqtype": "2955",
         "needparse": true
       }
     }
   ],
   "group": "0,1",
-  "curpackageidx": 0,
+  "receivecount": 0,
   "isemptydata": 0,
   "rspdata": "byte stream",
   "reccompletetag": true

@@ -62,3 +62,16 @@
 }
 
 @end
+
+@implementation NSObject (UUIDString)
+
+- (NSString *)uuidString
+{
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    NSString *uuidString = (NSString*)CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault, uuid));
+    CFRelease(uuid);
+    
+    return uuidString;
+}
+
+@end
