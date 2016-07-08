@@ -166,15 +166,46 @@ static int packageTag = 0;
 
 - (void)_addSendPackageDic:(NSMutableDictionary *)packageDic
 {
-    [packageDic setObject:[NSNumber numberWithInteger:packageTag] forKey:@"packagetag"];
     NSArray *reqArray = [packageDic objectForKey:@"reqdic"];
     NSMutableDictionary *dic = [reqArray objectAtIndex:0];
     NSMutableData *packageData = [NSMutableData data];
     [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         NSMutableDictionary *itemPackageDic = (NSMutableDictionary *)obj;
         [itemPackageDic setObject:[NSNumber numberWithInteger:packageTag] forKey:@"packagetag"];
+        // 将传参拼成二进制包
+        NSInteger reqType = [[itemPackageDic objectForKey:@"reqtype"] integerValue];
+        short attrs = [[itemPackageDic objectForKey:@"reqheaderattr"] shortValue];
+        char tag = packageTag;
+        NSData *data = [itemPackageDic objectForKey:@"reqdata"];
+        unsigned short len = [data length];
+        [packageData appendBytes:&tag length:sizeof(tag)];
+        [packageData appendBytes:&reqType length:sizeof(reqType)];
+        [packageData appendBytes:&attrs length:sizeof(attrs)];
+        [packageData appendBytes:&len length:sizeof(len)];
+        [packageData appendData:data];
     }];
-    
+    [packageDic setObject:packageData forKey:@"reqdata"];
+    [packageDic setObject:[NSNumber numberWithInteger:packageTag] forKey:@"packagetag"];
+    if (self.queueArray.count == 0) {
+        self.queueArray = [NSMutableArray arrayWithObject:packageDic];
+    } else {
+        [self.queueArray insertObject:packageDic atIndex:0];
+    }
+}
+
+- (void)_sendRequestData
+{
+    if (self.queueArray.count > 0) {
+        NSMutableDictionary *sendDic = [self.queueArray objectAtIndex:0];
+        NSData *sendData = [sendDic objectForKey:@"reqdata"];
+        if (_socket.isConnected) {
+            [_socket writeData:sendData withTimeout:-1 tag:0];
+        } else {
+            [self disConnectSocket];
+            [self.queueArray removeAllObjects];
+            self.receiveData = [NSMutableData data];
+        }
+    }
 }
 
 #pragma mark - public
@@ -186,15 +217,7 @@ static int packageTag = 0;
 
 - (void)sendRequestData:(NSMutableDictionary *)dataDic
 {
-    if (_socket.isConnected) {
-        [self _addSendPackageDic:dataDic];
-        [_socket writeData:nil withTimeout:-1 tag:0];
-    } else {
-        [self disConnectSocket];
-        [self.queueArray removeAllObjects];
-        [self _addSendPackageDic:dataDic];
-        self.receiveData = [NSMutableData data];
-    }
+    [self _addSendPackageDic:dataDic];
 }
 
 - (void)disConnectSocket

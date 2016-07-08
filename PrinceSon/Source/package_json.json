@@ -7,6 +7,7 @@
       "packagecallbacktag0": {
         "reqdata": "byte stream",
         "reqtype": "2955",
+        "reqheaderattr":"0",
         "packagetag": "212",
         "needparse": false
       }
@@ -23,6 +24,7 @@
   "group": "0,1",
   "receivecount": 0,
   "isemptydata": 0,
+  "reqdata": "byte stream",
   "rspdata": "byte stream",
   "reccompletetag": true
 }
